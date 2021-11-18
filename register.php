@@ -56,6 +56,7 @@ $motivationText = "";
 $param_username = $param_password = $param_studentname = $pcn = $imagelocation = $year = $motivation = "";
 $studentName = "";
 $target_file = "";
+$email = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -237,9 +238,13 @@ echo file_get_contents("html/navbar.html");
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>
 			<div class="form-group">
-				<label>Student Name</label>
-				<input type="text" name="studentname" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="">
+				<label for="studentName">Student Name</label>
+				<input type="text" id="studentName" name="studentname" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="">
 				<span class="invalid-feedback"><?php echo $username_err; ?></span>
+			</div>
+			<div class="form-group">
+				<label for="email">Enter your email:</label>
+				<input type="email" id="email" name="email">
 			</div>
 			<div class="form-group">
                 <label>PCN</label>
