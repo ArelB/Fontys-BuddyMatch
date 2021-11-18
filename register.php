@@ -172,12 +172,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
 	$motivationText = htmlspecialchars($_POST["motivation"]);
  }
-	//Dev Notes: Need to implement check for if file is uploaded and error is received to block it.  
-    		/*echo ("username error is:".empty($username_err));
-			echo ("password error is:".empty($password_err));
-			echo ("Conform error is:".empty($confirm_password_err));
-			echo ("pcn error is:".empty($pcn_err));
-			echo ("Upload error is: ".empty($uploadError));*/
 
     // Check input errors before inserting in database
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($pcn_err) && empty($uploadError)){
@@ -195,7 +189,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$param_pcn = $pcn;
 				$param_imagelocation = $target_file;
 				$param_year = $studentYear;
-				$param_motivation = $motivation;
+				$param_motivation = $motivationText;
 				echo "Hello, I like to misbehave";
 				// Bind variables to the prepared statement as parameters
 			   $stmt->bind_param("sssssss",$param_username, $param_password, $param_studentname, $param_pcn, $param_imagelocation, $param_year, $param_motivation);
