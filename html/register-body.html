@@ -1,0 +1,59 @@
+<body>	
+	<form action="/process_student.php" method="post" target="_blank">    
+	<label> Firstname </label>         
+	<input type="text" name="firstname" size="15"/> <br> <br>  
+	<label> Middlename: </label>     
+	<input type="text" name="middlename" size="15"/> <br> <br>  
+	<label> Lastname: </label>         
+	<input type="text" name="lastname" size="15"/> <br> <br>  
+	<label> PCN </label> 
+	<input type="text" name ="PCN" size="15" /> </br> </br>
+	<label> Student ID </label> 
+	<input type="text" name ="studentID" size="15" /> </br> </br>
+	<label> Motivation </label>
+	<textarea id="motivation" name="motivation" rows="4" cols="50">
+	<label> Insert your motivation to become a buddy or why you are looking for a buddy.</label>
+	</textarea>
+	</br>
+	<label> What are your hobbies? </label>
+	</br>
+	<textarea id="Hobbies" name="hobbies" rows="4" cols="50">
+	</textarea>
+	<label>
+	Course:
+	</label>
+	<input type="radio" id="stream1" name="courseOptions" value="ES" checked>
+	<label for="stream1">Physiotherapy ES</label>
+	<input type="radio" id="stream2" name="courseOptions" value="NL">
+	<label for="stream2">Fysiotherapie NL</label>
+	<label for="avatar">Choose a profile picture:</label>
+	
+	</br>
+
+<input type="file"
+       id="avatar" name="avatar"
+       accept="image/png, image/jpeg">
+	   
+	   </br>
+	   
+	<label>
+	Year:
+	</label>
+	<input type="radio" id="year1" name="year" value="1" checked>
+	<label for="year1">Year 1</label>
+	
+	<input type="radio" id="year2" name="year" value="2">
+	<label for="year2">Year 2</label>
+	<label>   
+	Email:  
+	<input type="email" id="email" name="email"/> 
+	<br> 
+	Password:  
+	<input type="Password" id="pass" name="pass">  
+	<br> 
+	Re-type password:  
+	<input type="Password" id="repass" name="repass"> <br> <br>  
+	<input type="submit" value="Submit"/>  
+	</form>  
+
+</body>
