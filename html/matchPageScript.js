@@ -101,7 +101,6 @@
 		  $('.currentSwipe').each(function(i,j){
 			  if (i == counter){
 				   var userLiked = j.innerHTML;
-				   alert(userLiked);
 				   dislikeUpdate(userName, userLiked);
 			  }
 		  });
@@ -146,7 +145,6 @@
 		  xhttp.onload = function(){		
 			myObj = this.responseText;
 			counter++;
-			alert(myObj);
 		  }
 		  xhttp.open("POST", "updateDislike.php");
 		  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

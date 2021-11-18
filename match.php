@@ -110,7 +110,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 	  $i = 1;
 	  //while($row = $result->fetch_assoc()) {
 		 for($z = 0; $z < count($avusers); $z++){
-		//echo "Student Name: " . $row["Student Name"]. " - PCN: " . $row["PCN"]. " -Motivation " . $row["Motivation"]. "<br>";
 		?>
 		<div class="tinder--card">
 			  <img class="responsive" src=" <?php echo ($imagearray[$z]);?> ">
@@ -133,7 +132,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 	}
 	
 	
-	//echo file_get_contents("html/match-body.html");
 ?>
 
 <!-- partial -->

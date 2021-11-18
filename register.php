@@ -41,14 +41,7 @@
   </style>
 </head> 
 <?php
-/*
-	echo file_get_contents("html/header.html");
-	echo file_get_contents("html/navbar.html");
-	
-	//echo file_get_contents("html/register-body.html");
 
-?>  */
-// Include config file
 require_once "config.php";
  
 // Define variables and initialize with empty values
@@ -190,7 +183,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$param_imagelocation = $target_file;
 				$param_year = $studentYear;
 				$param_motivation = $motivationText;
-				echo "Hello, I like to misbehave";
 				// Bind variables to the prepared statement as parameters
 			   $stmt->bind_param("sssssss",$param_username, $param_password, $param_studentname, $param_pcn, $param_imagelocation, $param_year, $param_motivation);
 				// Attempt to execute the prepared statement
@@ -204,7 +196,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				// Close statement
 				$stmt->close();
 			}
-		} else { echo "How rude!";}
+		} 
     }
     
     // Close connection
