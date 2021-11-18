@@ -171,7 +171,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($pcn_err) && empty($uploadError)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO buddymatch (username, password, studentname, pcn, imagelocation, year, motivation) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO buddymatch (username, password, studentname, pcn, imagelocation, year, motivation, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
 		if($username !="" && $password != "" && $studentName != "" && $pcn != "" && $target_file != ""){
 			if($stmt = $mysqli->prepare($sql)){
@@ -184,8 +184,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$param_imagelocation = $target_file;
 				$param_year = $studentYear;
 				$param_motivation = $motivationText;
+				$param_email = $_POST["email"];
 				// Bind variables to the prepared statement as parameters
-			   $stmt->bind_param("sssssss",$param_username, $param_password, $param_studentname, $param_pcn, $param_imagelocation, $param_year, $param_motivation);
+			   $stmt->bind_param("ssssssss",$param_username, $param_password, $param_studentname, $param_pcn, $param_imagelocation, $param_year, $param_motivation, $param_email);
 				// Attempt to execute the prepared statement
 				if($stmt->execute()){
 					// Redirect to login page
