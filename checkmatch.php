@@ -36,6 +36,7 @@
 					$stmt->execute();
 				}
 				
+				
 			}else{
 				//update liked table with new like
 				$sql = "INSERT INTO `likes` (`id`, `created_at`, `username`, `userlikes`) VALUES ('', current_timestamp(),'".$param_username."', '".$param_userliked."')";
