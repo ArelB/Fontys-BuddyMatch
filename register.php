@@ -8,29 +8,37 @@
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel='stylesheet' href="./html/matchPageStyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
     <style> 
-  .bg-light{
-	background-color: #65316c!important;
-	} 
 	
 	.navbar-light .navbar-nav .nav-link {
 	color: white !important;
 	}
 	
 	body{
-		overflow: auto !important;
+		overflow-y: auto !important;
+		font-family: playfair family !important;
+		background-color: #d9e4f5 !important;
+background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%) !important;
 	}
 	
 	form{
-		margin-top: 25px;
-		margin-left: 40px;
-		display: grid;
+		position:relative;
+		width: 50%;
+		margin: auto;
 	}
 	
-	input{
-			width: fit-content;
+	.form-control{
+		width: 50% !important;
 	}
 	
+	.form-group{
+		display:inline-block !important;
+		width: 50%;
+	}
 	label{
 		display: grid !important;
 	}
@@ -38,6 +46,32 @@
 	textarea{
 		width: fit-content;
 	}
+	
+	input[type=text], input[type="password"], input[type="email"], input[type="file"], textarea {
+	border: none;
+    border-bottom: 2px solid black;
+    background-color: #d9e4f5 !important;
+    background-image: linear-gradient(
+	359deg, #d9e4f5 0%, #f5e3e6 74%) !important;
+	}	
+
+	input[type="email"], textarea{
+		width: 60%;
+	}
+	.title{
+		 width: 50%;
+		height: 50%;
+		margin: auto;
+		position: relative;
+		padding-top: 25px;
+		padding-left: 100px;
+	}
+	
+	.subtitle{
+		width: 50% !important;
+		margin-bottom: 25px;
+	}
+	
   </style>
 </head> 
 <?php
@@ -220,59 +254,82 @@ echo file_get_contents("html/navbar.html");
  
 <body>
     <div class="wrapper">
-        <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"  enctype="multipart/form-data">
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>Confirm Password</label>
-                <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="">
-                <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-            </div>
-			<div class="form-group">
-				<label for="studentName">Student Name</label>
-				<input type="text" id="studentName" name="studentname" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="">
-				<span class="invalid-feedback"><?php echo $username_err; ?></span>
-			</div>
-			<div class="form-group">
-				<label for="email">Enter your email:</label>
-				<input type="email" id="email" name="email">
-			</div>
-			<div class="form-group">
-                <label>PCN</label>
-                <input type="text" name="pcn" class="form-control <?php echo (!empty($pcn_err)) ? 'is-invalid' : ''; ?>" value="">
-                <span class="invalid-feedback"><?php echo $pcn_err; ?></span> 
-            </div>
-			<div class="form-group">
-				<label>Select image to upload:</label>
-				<input type="file" name="fileToUpload" id="fileToUpload" class="form-control <?php echo (!empty($uploadError)) ? 'is-invalid' : ''; ?> ">
-				<span class="invalid-feedback"> <?php echo($uploadError); ?> </span>
-			</div>
-			<div class="form-group">
-				<label>Which year are you in?</label>
-				<input type="radio" id="first" name="studentYear" value="first" checked>
-				<label for="first">First Year</label>
-				<input type="radio" id="second" name="studentYear" value="second">
-				<label for="second">Second Year</label>
-			</div>
-			<div class="form-group">
-				<label for="Motivation"> Motivation:</label>
-				<textarea id="Motivation" name="motivation" rows="4" cols="50">
-				</textarea>
-			</div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <input type="reset" class="btn btn-secondary ml-2" value="Reset">
-            </div>
+		<h2 class="title">Sign Up</h2>
+        <p class="title subtitle">Please fill this form to create an account.</p>
+
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"  enctype="multipart/form-data">
+			<table>
+			<tr>
+				<div class="form-group">
+					<label>Username</label>
+					<input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="">
+					<span class="invalid-feedback"><?php echo $username_err; ?></span>
+				</div>  
+			</tr>
+			<tr>
+				<div class="form-group">
+					<label>Password</label>
+					<input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="">
+					<span class="invalid-feedback"><?php echo $password_err; ?></span>
+				</div>
+			</tr>
+			<tr>
+				<div class="form-group">
+					<label>Confirm Password</label>
+					<input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="">
+					<span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+				</div>
+			</tr>
+			<tr>
+				<div class="form-group">
+					<label for="studentName">Student Name</label>
+					<input type="text" id="studentName" name="studentname" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="">
+					<span class="invalid-feedback"><?php echo $username_err; ?></span>
+				</div>
+			</tr>
+			<tr>
+				<div class="form-group">
+					<label for="email">Enter your email:</label>
+					<input type="email" id="email" name="email">
+				</div>
+			</tr>
+			<tr>
+				<div class="form-group right">
+					<label>PCN</label>
+					<input type="text" name="pcn" class="form-control <?php echo (!empty($pcn_err)) ? 'is-invalid' : ''; ?>" value="">
+					<span class="invalid-feedback"><?php echo $pcn_err; ?></span> 
+				</div>
+			</tr>
+			<tr>
+				<div class="form-group" style="width: 65% !important;">
+					<label>Select image to upload:</label>
+					<input type="file" name="fileToUpload" id="fileToUpload" class="form-control <?php echo (!empty($uploadError)) ? 'is-invalid' : ''; ?> ">
+					<span class="invalid-feedback"> <?php echo($uploadError); ?> </span>
+				</div>
+			</tr>
+			<tr>
+				<div class="form-group right">
+					<label>Which year are you in?</label>
+					<input type="radio" id="first" name="studentYear" value="first" checked>
+					<label for="first">First Year</label>
+					<input type="radio" id="second" name="studentYear" value="second">
+					<label for="second">Second Year</label>
+				</div>
+			</tr>
+			<tr>
+				<div class="form-group right">
+					<label for="Motivation"> Motivation:</label>
+					<textarea id="Motivation" name="motivation" rows="4" cols="50">
+					</textarea>
+				</div>
+			</tr>
+			<tr>
+				<div class="test">
+					<input type="submit" class="btn btn-primary" value="Submit">
+					<input type="reset" class="btn btn-secondary ml-2" value="Reset">
+				</div>
+			</tr>
+		</table>
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
     </div>    

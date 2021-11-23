@@ -126,7 +126,6 @@
 		  xhttp.onload = function(){		
 			myObj = this.responseText;
 			counter++;
-			alert(liked);
 			if(myObj == "yes"){
 				alert("Congratulations! You matched with " + liked + "! An email will arrive shortly");
 			}
