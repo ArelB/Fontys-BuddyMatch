@@ -21,9 +21,50 @@ body {
   transition: opacity 0.1s ease-in-out;
 }
 
+	.navbar-light .navbar-nav .nav-link {
+	color: white !important;
+	}
+	
+	body{
+		overflow-y: auto !important;
+		font-family: playfair family !important;
+		background-color: #d9e4f5 !important;
+background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%) !important;
+	}
+	
+	.loginform{
+		width: 30%;
+		margin: 0 auto;
+	}
+
+h2.titleHeader{
+	width:30%;
+	margin: 0 auto;
+	padding-top:20px;
+	padding-bottom: 5px;
+}
+
+p.titleHeader{
+	width:30%;
+	margin: 0 auto;
+	padding-bottom:20px;
+}
+
+h2#loginMessage.titleHeader{
+	font-size: 20px;
+}
+
 .loaded.tinder {
   opacity: 1;
 }
+
+input[type=text], input[type="password"], input[type="email"], input[type="file"], textarea {
+	border: none;
+    border-bottom: 2px solid black;
+    background-color: #d9e4f5 !important;
+    background-image: linear-gradient(
+	359deg, #d9e4f5 0%, #f5e3e6 74%) !important;
+	}	
 
 .tinder--status {
   position: absolute;

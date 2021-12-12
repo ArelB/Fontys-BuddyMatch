@@ -12,10 +12,12 @@
 <body>
 <?php
 
-
 	// Initialize the session
 	session_start();
 	echo file_get_contents("html/navbar.html");	
+//checking if user is logged in, if they are show matching page otherwise display message
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+
 	require_once "config.php";
 	//Create counter for array
 	$y = 0;
@@ -104,7 +106,6 @@
 
 //Set up variable for loop counter
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 	if ($result->num_rows > 0) {
 	  // output data of each row
 	  $i = 1;
@@ -129,9 +130,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 		<?php
 	} else {
 	  echo "0 results";
-	}
-	
-	
+	}	
 ?>
 
 <!-- partial -->
@@ -141,8 +140,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	  <script  src="./html/matchPageScript.js"></script>
 	  <?php
+}else{
+	echo ("<h2 class='titleHeader' id='loginMessage'>You need to log in to find a buddy. Click <a href='login.php'> here </a> to login or register </h2>");
 }
-else{
-	echo ("Click <a href='login.php'> here </a> to login or register");
-} ?>
+ ?>
 </body>

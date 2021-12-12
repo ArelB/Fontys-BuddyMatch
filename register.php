@@ -14,25 +14,15 @@
 
     <style> 
 	
-	.navbar-light .navbar-nav .nav-link {
-	color: white !important;
-	}
-	
-	body{
-		overflow-y: auto !important;
-		font-family: playfair family !important;
-		background-color: #d9e4f5 !important;
-background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%) !important;
-	}
-	
+
 	form{
 		position:relative;
-		width: 50%;
+		width: 70%;
 		margin: auto;
 	}
 	
 	.form-control{
-		width: 50% !important;
+		width: 90% !important;
 	}
 	
 	.form-group{
@@ -42,24 +32,16 @@ background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%) !important;
 	label{
 		display: grid !important;
 	}
-	
-	textarea{
-		width: fit-content;
-	}
-	
-	input[type=text], input[type="password"], input[type="email"], input[type="file"], textarea {
-	border: none;
-    border-bottom: 2px solid black;
-    background-color: #d9e4f5 !important;
-    background-image: linear-gradient(
-	359deg, #d9e4f5 0%, #f5e3e6 74%) !important;
-	}	
 
 	input[type="email"], textarea{
-		width: 60%;
+		width: 90%;
+	}
+	
+	input[type="file"]{
+		width: 50%;
 	}
 	.title{
-		 width: 50%;
+		 width: 35%;
 		height: 50%;
 		margin: auto;
 		position: relative;
@@ -68,7 +50,7 @@ background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%) !important;
 	}
 	
 	.subtitle{
-		width: 50% !important;
+		width: 45% !important;
 		margin-bottom: 25px;
 	}
 	
@@ -301,7 +283,7 @@ echo file_get_contents("html/navbar.html");
 				</div>
 			</tr>
 			<tr>
-				<div class="form-group" style="width: 65% !important;">
+				<div class="form-group">
 					<label>Select image to upload:</label>
 					<input type="file" name="fileToUpload" id="fileToUpload" class="form-control <?php echo (!empty($uploadError)) ? 'is-invalid' : ''; ?> ">
 					<span class="invalid-feedback"> <?php echo($uploadError); ?> </span>
