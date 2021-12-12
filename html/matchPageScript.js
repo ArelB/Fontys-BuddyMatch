@@ -9,6 +9,9 @@
 	//implment counter to know which id fits which element
 	var counter = 0;
 
+	  $("#dialog").dialog({
+		autoOpen : false, modal : true, show : "blind", hide : "blind"
+	  });
 	function initCards(card, index) {
 	  var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
 
@@ -128,6 +131,28 @@
 			counter++;
 			if(myObj == "yes"){
 				alert("Congratulations! You matched with " + liked + "! An email will arrive shortly");
+				// Get the modal
+				var modal = document.getElementById("myModal");
+
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close")[0];
+
+				modal.style.display = "block";
+
+				$("#modalText").html("Congratulations! You matched with " + liked + "! An email will arrive shortly");
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() {
+					modal.style.display = "none";
+				}
+
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+
+
 			}
 		  }
 		  xhttp.open("POST", "checkmatch.php");

@@ -8,6 +8,47 @@
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel='stylesheet' href="./html/matchPageStyle.css">
+  
+<style>
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 40%; /* Full width */
+  height: 60%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40% !important;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none; 
+  cursor: pointer;
+}
+</style>
 </head>
 <body>
 <?php
@@ -109,11 +150,27 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 	  </div>
 	 <div class="tinder--cards"> <?php
 	  // output data of each row
-	  $i = 1;
-	  //while($row = $result->fetch_assoc()) {
+	  $i = 1; ?> 
+	  
+	  <!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+		<span class="close">&times;</span>
+	<div class="pyro">
+    <div class="before"></div>
+    <div class="after"></div>
+	</div>
+	<p id="modalText"></p>
+	  <img src="./html/studybuddies.png" style="width:30%; margin: auto"></img>
+	</div>
+
+	</div>
+<?php
 		 for($z = 0; $z < count($avusers); $z++){
 		?>
-		<div class="tinder--card">
+		<div class="tinder--card"> 
 			  <img class="responsive" src=" <?php echo ($imagearray[$z]);?> ">
 			  <h3 class="currentSwipe"><?php echo $avusers[$z]; ?></h3>
 			  <p id="currentUser" hidden><?php echo $_SESSION["username"]; ?></p>
@@ -136,13 +193,17 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 <!-- partial -->
 	  <script src='https://hammerjs.github.io/dist/hammer.min.js'></script>
-	  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	  <script  src="./html/matchPageScript.js"></script>
+	  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k="crossorigin="anonymous"></script>
 	  <?php
 }else{
-	echo ("<h2 class='titleHeader' id='loginMessage'>You need to log in to find a buddy. Click <a href='login.php'> here </a> to login or register </h2>");
+	echo ("<h2 class='titleHeader' id='loginMessage'>You need to log in to find a buddy. Click <a href='login.php'> here </a> to login or register </h2>"); 
+	
 }
  ?>
+ 
+
 </body>
