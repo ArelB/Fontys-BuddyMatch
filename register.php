@@ -11,50 +11,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-
-    <style> 
-	
-
-	form{
-		position:relative;
-		width: 70%;
-		margin: auto;
-	}
-	
-	.form-control{
-		width: 90% !important;
-	}
-	
-	.form-group{
-		display:inline-block !important;
-		width: 50%;
-	}
-	label{
-		display: grid !important;
-	}
-
-	input[type="email"], textarea{
-		width: 90%;
-	}
-	
-	input[type="file"]{
-		width: 50%;
-	}
-	.title{
-		 width: 35%;
-		height: 50%;
-		margin: auto;
-		position: relative;
-		padding-top: 25px;
-		padding-left: 100px;
-	}
-	
-	.subtitle{
-		width: 45% !important;
-		margin-bottom: 25px;
-	}
-	
-  </style>
 </head> 
 <?php
 
