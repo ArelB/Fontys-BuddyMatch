@@ -97,18 +97,17 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 	}
 ?>
 
-<body>
+<?php
+
+//Set up variable for loop counter
+	if (count($avusers) > 0) { ?>
+	<body>
 	<div class="tinder">
 	  <div class="tinder--status">
 		<i class="fa fa-remove"></i>
 		<i class="fa fa-heart"></i>
 	  </div>
-	 <div class="tinder--cards">
-<?php
-
-//Set up variable for loop counter
-// Check if the user is already logged in, if yes then redirect him to welcome page
-	if ($result->num_rows > 0) {
+	 <div class="tinder--cards"> <?php
 	  // output data of each row
 	  $i = 1;
 	  //while($row = $result->fetch_assoc()) {
@@ -131,7 +130,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 		</div>
 		<?php
 	} else {
-	  echo "0 results";
+	  echo ("<h2 class='titleHeader' style='width:60% !important; font-size: 2vh;'> Unfortunately, there are no more students left to match with. Please try again later! </h2>");
 	}	
 ?>
 

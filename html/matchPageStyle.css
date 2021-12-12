@@ -230,7 +230,6 @@ input[type=text], input[type="password"], input[type="email"], input[type="file"
 		margin: auto;
 		position: relative;
 		padding-top: 25px;
-		padding-left: 100px;
 	}
 	
 	.subtitle{
