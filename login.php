@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
@@ -8,49 +8,10 @@
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel='stylesheet' href="./html/matchPageStyle.css">
-    <style> 
-  .bg-light{
-	background-color: #65316c!important;
-	} 
-	
-	.navbar-light .navbar-nav .nav-link {
-	color: white !important;
-	}
-	
-	body{
-		overflow: auto !important;
-	}
-	
-	form{
-		margin-top: 25px;
-		margin-left: 40px;
-		display: grid;
-	}
-	
-	input{
-			width: fit-content;
-	}
-	
-	label{
-		display: grid !important;
-	}
-	
-	textarea{
-		width: fit-content;
-	}
-  </style>
-</head> --> 
-
+  
 <?php
 // Initialize the session
 session_start();
- 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    //header("location: welcome.php");
-	echo ($_SESSION["loggedin"]);
-    exit;
-}
  
 // Include config file
 require_once "config.php";
