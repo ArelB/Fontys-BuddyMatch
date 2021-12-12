@@ -35,6 +35,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 			array_push($likedUsers, $row["userlikes"]);
 		  }
 	}
+	//Add yourself to the array to make sure you don't appear in your own search
+	array_push($likedUsers,$_SESSION["username"]);
 	
 	if($stmt = $mysqli->prepare($sqldisliked)){
 		$stmt->execute();
