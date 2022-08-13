@@ -152,7 +152,12 @@
 				}
 			}
 
-
+			$.ajax({
+				url: 'mailsend.php',
+				success: function(data) {
+					alert('Directory created');
+				}
+			});
 			}
 		  }
 		  xhttp.open("POST", "checkmatch.php");

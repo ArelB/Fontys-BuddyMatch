@@ -62,6 +62,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
+			
+			$username = $param_username;
 
             // Close statement
             $stmt->close();
@@ -135,17 +137,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	}
 	
 	$studentYear = $_POST["studentYear"];
-	
 	$motivationText = htmlspecialchars($_POST["motivation"]);
+	$username = trim($_POST["username"]);
  }
 
     // Check input errors before inserting in database
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($pcn_err) && empty($uploadError)){
-        
         // Prepare an insert statement
         $sql = "INSERT INTO buddymatch (username, password, studentname, pcn, imagelocation, year, motivation, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        
 		if($username !="" && $password != "" && $studentName != "" && $pcn != "" && $target_file != ""){
+			echo("yo yo yo");
 			if($stmt = $mysqli->prepare($sql)){
 				
 				// Set parameters

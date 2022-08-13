@@ -15,6 +15,5 @@
 			$stmt->execute();
 			echo("no failure to launch");
 		}
-		//echo ("dislike updated");
 	}
 
